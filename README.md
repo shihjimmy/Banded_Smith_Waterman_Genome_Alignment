@@ -10,7 +10,10 @@ This repo implements both software and hardware version of Banded Smith Waterman
   > 1. source license.sh 
   > 2. vcs tb_BSW.v +define+RTL -full64 -R -debug_access+all +v2k +notimingcheck
 * check SYN result
-  > vcs tb_BSW.v +define+SDF -full64 -R -debug_access+all +v2k +notimingcheck
+  > vcs tb_BSW.v +define+SDF -full64 -R -debug_access+all +v2k +notimingcheck  
 ### Block Diagram
+* I did not implement the traceback part  
 ![](PE_BSW.png)
 ![](banded.png)
+### Reference
+> please check out: https://ieeexplore.ieee.org/document/8445105  
