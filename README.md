@@ -13,3 +13,4 @@ This repo implements both software and hardware version of Banded Smith Waterman
   > vcs tb_BSW.v +define+SDF -full64 -R -debug_access+all +v2k +notimingcheck
 ### Block Diagram
 ![](PE_BSW.png)
+![](banded.png)
