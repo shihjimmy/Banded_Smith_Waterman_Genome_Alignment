@@ -2,6 +2,8 @@
 Software (Python golden model) and hardware (Verilog RTL) implementation of the
 **banded** Smith-Waterman algorithm with affine gap penalty and **hardware traceback**.
 
+**Design report (algorithm, circuit diagrams, verification results): [report/REPORT.md](report/REPORT.md)**
+
 ## What is BSW
 It resembles the SW algorithm, but only a band around the main diagonal of the DP table is computed,
 which reduces both computation and traceback memory.
@@ -42,7 +44,7 @@ H source DIAG > UP (F) > LEFT (E), stop at `H == 0`; a gap is extended only if s
 ## Software
 * `BSW.py` – golden model (scoring + traceback), bit-exact with the RTL.
   `python3 BSW.py [--band B] [--s a.dat --t b.dat]` (`--band 0` = full SW)
-* `gen_pattern.py` – generates `testbench/pattern/caseNN_{s,t,golden}.dat`
+* `gen_pattern.py` – generates `testbench/pattern/caseNNN_{s,t,golden}.dat` and `cases.txt`
   (`--band B`, `--length L`, `--random N`, `--legacy s.dat t.dat`)
 
 ## Hardware (`verilog/BSW.v`)
@@ -73,7 +75,7 @@ Only the H/E/F of the last step and H of the step before are kept (two register 
 ### Interface
 | port | dir | description |
 |---|---|---|
-| `valid`, `data_s[1:0]`, `data_t[1:0]` | in | `S[k]`, `T[k]` for k = 0..L-1 on L consecutive cycles |
+| `valid`, `data_s[1:0]`, `data_t[1:0]` | in | `S[k]`, `T[k]` for k = 0..L-1, one pair per `valid` cycle (idle cycles in between are allowed) |
 | `aln_valid`, `aln_op[1:0]` | out | ops from the alignment **end back to its start**: 0 MATCH, 1 MISMATCH, 2 INS (gap in S), 3 DEL (gap in T) |
 | `finish` | out | 1-cycle pulse when traceback is done |
 | `max` | out | best score |
@@ -91,7 +93,12 @@ vcs tb_BSW.v +define+RTL -full64 -R -debug_access+all +v2k +notimingcheck       
 # or with Icarus Verilog:
 sh run_iverilog.sh            # B = 4
 sh run_iverilog.sh stress     # + random pairs for L = 16..256, B = 1..64
+python3 run_regression.py     # full regression
 ```
+The testbench runs all 33 cases of `testbench/pattern` back-to-back (plus a reset-in-the-middle test) and checks score, end/start position, length and every traceback op.
+
+Full regression: `python3 run_regression.py` (39 configurations, 4,780 cases; summary in `testbench/regression_summary.md`). Golden-model cross-check: `python3 tools/validate_model.py` (needs biopython). Testbench sensitivity: `python3 tools/mutation_test.py`.
+
 For another band: `python3 ../gen_pattern.py --band 8 --out pattern_b8` and simulate with
 `+define+BAND=8 +define+PAT_DIR=\"pattern_b8/\"`.
 

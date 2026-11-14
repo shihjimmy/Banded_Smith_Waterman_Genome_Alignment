@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="700" viewBox="0 0 1240 700"><defs><marker id="ar_2b2b2b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b2b2b"/></marker><marker id="ar_b0601a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b0601a"/></marker><marker id="ar_c0392b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0392b"/></marker><marker id="ar_7b3fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7b3fa0"/></marker><marker id="ar_7a7a7a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7a7a7a"/></marker><marker id="ar_1f5fa8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1f5fa8"/></marker></defs><rect width="100%" height="100%" fill="#ffffff"/><text x="620" y="24" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="17" text-anchor="middle" font-weight="bold" fill="#111">BSW PE slice k:  neighbour select + DP cell + step registers</text>
+<text x="20" y="52" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="start" font-weight="normal" fill="#444">h1/e1/f1/v1 = results of step t-1,  h2/v2 = H of step t-2 (all PEs).  Invalid neighbour (outside band / matrix): H = 0, E = F = -inf.</text>
+<rect x="430" y="85" width="470" height="420" rx="4" fill="#fffdf6" stroke="#b8860b" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="665" y="108" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#b8860b">DP cell  (combinational, same recurrence as SW)</text>
+<text x="110" y="117" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">h1/f1/v1[k-1]</text>
+<text x="110" y="157" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">h1/f1/v1[k]</text>
+<path d="M112 113 L160 113" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M112 153 L160 153" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M160 95 L200 108.68 L200 157.32 L160 171 Z" fill="#eeeeee" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="180" y="91" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">mv_down</text>
+<text x="170" y="117" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">0</text>
+<text x="170" y="157" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">1</text>
+<rect x="240" y="108" width="92" height="50" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="286" y="129.275" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">valid ?</text>
+<text x="286" y="145.385" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#444">else 0 / -inf</text>
+<path d="M200 133 L240 133" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M332 133 L372 133" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+<text x="376" y="129.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#c0392b" font-style="italic">h_up</text>
+<text x="376" y="144.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#c0392b" font-style="italic">f_up</text>
+<text x="180" y="191" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">up (i-1, j): H, F</text>
+<text x="110" y="247" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">h1/e1/v1[k]</text>
+<text x="110" y="287" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">h1/e1/v1[k+1]</text>
+<path d="M112 243 L160 243" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M112 283 L160 283" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M160 225 L200 238.68 L200 287.32 L160 301 Z" fill="#eeeeee" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="180" y="221" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">mv_down</text>
+<text x="170" y="247" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">0</text>
+<text x="170" y="287" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">1</text>
+<rect x="240" y="238" width="92" height="50" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="286" y="259.275" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">valid ?</text>
+<text x="286" y="275.385" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#444">else 0 / -inf</text>
+<path d="M200 263 L240 263" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M332 263 L372 263" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+<text x="376" y="259.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#c0392b" font-style="italic">h_left</text>
+<text x="376" y="274.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#c0392b" font-style="italic">e_left</text>
+<text x="180" y="321" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">left (i, j-1): H, E</text>
+<text x="110" y="377" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">h2/v2[k]</text>
+<text x="110" y="417" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">h2/v2[k-1]</text>
+<path d="M112 373 L160 373" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M112 413 L160 413" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M160 355 L200 368.68 L200 417.32 L160 431 Z" fill="#eeeeee" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="180" y="351" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">right &amp; right</text>
+<text x="170" y="377" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">0</text>
+<text x="170" y="417" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#7a7a7a">1</text>
+<rect x="240" y="368" width="92" height="50" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="286" y="389.275" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">valid ?</text>
+<text x="286" y="405.385" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#444">else 0 / -inf</text>
+<path d="M200 393 L240 393" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M332 393 L372 393" fill="none" stroke="#c0392b" stroke-width="1.5"/>
+<text x="376" y="397" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#c0392b" font-style="italic">h_diag</text>
+<text x="180" y="451" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">diag (i-1, j-1): H</text>
+<text x="190" y="490" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#7a7a7a">edge PEs: index k-1 &lt; 0 or k+1 &gt;= B -&gt; invalid</text>
+<text x="470" y="144" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">sw[k]</text>
+<text x="470" y="164" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#1f5fa8" font-style="italic">tw[k]</text>
+<rect x="475" y="125" width="110" height="50" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="530" y="146.975" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">S == T ?</text>
+<text x="530" y="160.725" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">+8 : -5</text>
+<circle cx="625" cy="150" r="14" fill="#fff" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="625" y="155.25" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" font-weight="bold" fill="#111">+</text>
+<path d="M585 150 L611 150" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M625 190 L625 164" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="625" y="206" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#c0392b" font-style="italic">h_diag</text>
+<path d="M639 150 L760 150 L760 190 L780 190" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="680" y="143" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" text-anchor="start" font-weight="normal" fill="#c0392b">D</text>
+<circle cx="500" cy="270" r="13" fill="#fff" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="500" y="273.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#111">-7</text>
+<circle cx="500" cy="305" r="13" fill="#fff" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="500" y="308.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#111">-3</text>
+<rect x="540" y="250" width="100" height="75" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="590" y="276.9" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">max</text>
+<text x="590" y="290.65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">ext&gt;open</text>
+<text x="590" y="306.76" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#444">E, e_ext</text>
+<path d="M513 270 L540 270" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M513 305 L540 305" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M640 285 L780 285" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="660" y="278" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" text-anchor="start" font-weight="normal" fill="#c0392b">E</text>
+<circle cx="500" cy="385" r="13" fill="#fff" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="500" y="388.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#111">-7</text>
+<circle cx="500" cy="420" r="13" fill="#fff" stroke="#2b2b2b" stroke-width="1.5"/>
+<text x="500" y="423.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#111">-3</text>
+<rect x="540" y="365" width="100" height="75" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="590" y="391.9" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">max</text>
+<text x="590" y="405.65" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">ext&gt;open</text>
+<text x="590" y="421.76" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="9" text-anchor="middle" font-weight="normal" fill="#444">F, f_ext</text>
+<path d="M513 385 L540 385" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M513 420 L540 420" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<path d="M640 400 L700 400 L700 380 L780 380" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="660" y="393" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="12" text-anchor="start" font-weight="normal" fill="#c0392b">F</text>
+<text x="474" y="274" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="end" font-weight="bold" fill="#c0392b" font-style="italic">h_left</text>
+<path d="M476 270 L487 270" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="474" y="309" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="end" font-weight="bold" fill="#c0392b" font-style="italic">e_left</text>
+<path d="M476 305 L487 305" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="474" y="389" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="end" font-weight="bold" fill="#c0392b" font-style="italic">h_up</text>
+<path d="M476 385 L487 385" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<text x="474" y="424" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="end" font-weight="bold" fill="#c0392b" font-style="italic">f_up</text>
+<path d="M476 420 L487 420" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<rect x="780" y="165" width="100" height="240" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="830" y="267" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">max(0,</text>
+<text x="830" y="282" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">D, F, E)</text>
+<text x="830" y="299.4" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">D &gt; F &gt; E</text>
+<text x="830" y="312.4" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">hsrc</text>
+<path d="M880 285 L960 285" fill="none" stroke="#c0392b" stroke-width="2" marker-end="url(#ar_c0392b)"/>
+<text x="888" y="277" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="11" text-anchor="start" font-weight="normal" fill="#c0392b">h_new</text>
+<path d="M640 318 L660 318" fill="none" stroke="#b0601a" stroke-width="1.5"/>
+<text x="663" y="322" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#b0601a" font-style="italic">e_ext</text>
+<path d="M640 432 L660 432" fill="none" stroke="#b0601a" stroke-width="1.5"/>
+<text x="663" y="436" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="start" font-weight="bold" fill="#b0601a" font-style="italic">f_ext</text>
+<path d="M830 405 L830 425" fill="none" stroke="#b0601a" stroke-width="1.5"/>
+<text x="830" y="441" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#b0601a" font-style="italic">hsrc</text>
+<text x="952" y="479" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="end" font-weight="bold" fill="#b0601a" font-style="italic">ptr[k] = {hsrc, e_ext, f_ext}</text>
+<path d="M954 475 L960 475" fill="none" stroke="#b0601a" stroke-width="1.5" marker-end="url(#ar_b0601a)"/>
+<rect x="960" y="130" width="100" height="230" rx="2" fill="#dbe8f7" stroke="#3b6ea8" stroke-width="1.6"/>
+<path d="M1004 360 L1010 353 L1016 360" fill="none" stroke="#3b6ea8" stroke-width="1.2"/>
+<text x="1010" y="212.475" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">step t-1</text>
+<text x="1010" y="226.225" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111"></text>
+<text x="1010" y="239.975" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">h1[k]</text>
+<text x="1010" y="253.725" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">e1[k]</text>
+<text x="1010" y="267.475" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">f1[k]</text>
+<text x="1010" y="281.225" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">v1[k]</text>
+<rect x="1110" y="170" width="100" height="110" rx="2" fill="#dbe8f7" stroke="#3b6ea8" stroke-width="1.6"/>
+<path d="M1154 280 L1160 273 L1166 280" fill="none" stroke="#3b6ea8" stroke-width="1.2"/>
+<text x="1160" y="206.225" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">step t-2</text>
+<text x="1160" y="219.975" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111"></text>
+<text x="1160" y="233.725" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">h2[k]</text>
+<text x="1160" y="247.475" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#111">v2[k]</text>
+<path d="M1060 225 L1110 225" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#ar_2b2b2b)"/>
+<text x="952" y="169" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" font-weight="bold" fill="#c0392b" font-style="italic">e_new, f_new</text>
+<path d="M954 165 L960 165" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#ar_c0392b)"/>
+<path d="M1010 395 L1010 362" fill="none" stroke="#7a7a7a" stroke-width="1.5" marker-end="url(#ar_7a7a7a)"/>
+<text x="1010" y="411" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="bold" fill="#7a7a7a" font-style="italic">valid (0 &lt;= c-k &lt; L)</text>
+<path d="M1060 320 L1225 320" fill="none" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#ar_2b2b2b)"/>
+<text x="1070" y="312" font-family="DejaVu Sans Mono, Consolas, monospace" font-size="10" text-anchor="start" font-weight="normal" fill="#7a7a7a">to neighbour muxes</text>
+<path d="M1210 225 L1235 225" fill="none" stroke="#2b2b2b" stroke-width="1.6" marker-end="url(#ar_2b2b2b)"/>
+<rect x="960" y="440" width="250" height="70" rx="4" fill="#e5f2e2" stroke="#3c8a3c" stroke-width="1.6"/>
+<text x="1085" y="471" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">traceback memory</text>
+<text x="1085" y="488.4" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">tbm[t] = {ptr[B-1], ..., ptr[0]}</text>
+<rect x="960" y="545" width="250" height="75" rx="4" fill="#fdf3d8" stroke="#b8860b" stroke-width="1.6"/>
+<text x="1085" y="572" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">best reduction (all PEs)</text>
+<text x="1085" y="589.4" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">cand = {h_new, r+k, c-k}</text>
+<text x="1085" y="602.4" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">score desc, i asc, j asc</text>
+<path d="M920 285 L920 582 L960 582" fill="none" stroke="#7b3fa0" stroke-width="1.5" marker-end="url(#ar_7b3fa0)"/>
+<circle cx="920" cy="285" r="3" fill="#7b3fa0"/>
+<rect x="475" y="560" width="420" height="80" rx="4" fill="#dbe8f7" stroke="#3b6ea8" stroke-width="1.6"/>
+<text x="685" y="589.5" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">S / T shift registers</text>
+<text x="685" y="606.9" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">sw[k] = S[r+k]: shifts only on a DOWN move</text>
+<text x="685" y="619.9" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="10" text-anchor="middle" font-weight="normal" fill="#444">tw[k] = T[c-k]: shifts only on a RIGHT move</text>
+<path d="M560 560 L560 175" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/>
+<path d="M530 560 L530 175" fill="none" stroke="#1f5fa8" stroke-width="1.5" marker-end="url(#ar_1f5fa8)"/></svg>

@@ -26,7 +26,7 @@
 // Scoring : match +8, mismatch -5, gap open -7, gap extend -3 (same as SW repo)
 //
 // Interface
-//   valid/data_s/data_t : S[k], T[k] for k = 0..L-1 on L consecutive cycles
+//   valid/data_s/data_t : S[k], T[k] for k = 0..L-1, one pair per valid cycle (gaps allowed)
 //   aln_valid/aln_op    : ops from alignment END back to START
 //                         0 = MATCH, 1 = MISMATCH, 2 = INS (gap in S), 3 = DEL (gap in T)
 //   finish (1 cycle)    : max, (end_i,end_j), (start_i,start_j), aln_len
