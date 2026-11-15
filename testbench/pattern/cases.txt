@@ -1,4 +1,4 @@
-case000 legacy s3.dat                    score  293 end (252,251)  start (9,10)     ops 281
+case000 sample s3.dat                    score  293 end (252,251)  start (9,10)     ops 281
 case001 identical                        score 2048 end (255,255)  start (0,0)      ops 256
 case002 all mismatch                     score    0 end (0,0)      start (1,1)      ops 0
 case003 unrelated random                 score  372 end (251,254)  start (0,0)      ops 290

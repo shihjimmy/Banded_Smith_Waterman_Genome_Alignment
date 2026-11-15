@@ -189,7 +189,7 @@ PE 使用率 = band 格數 / (B · 步數) = (2BL − B²) / (B(2L − 1))。L =
 
 | case | 測資 | 分數 | 終點 (i,j) | 起點 (i,j) | 運算數 | B = 4 | B = 4, valid gaps |
 |---|---|---|---|---|---|---|---|
-| 000 | legacy s3.dat | 293 | (252,251) | (9,10) | 281 | ✓ | ✓ |
+| 000 | sample s3.dat | 293 | (252,251) | (9,10) | 281 | ✓ | ✓ |
 | 001 | identical | 2048 | (255,255) | (0,0) | 256 | ✓ | ✓ |
 | 002 | all mismatch | 0 | (0,0) | (1,1) | 0 | ✓ | ✓ |
 | 003 | unrelated random | 372 | (251,254) | (0,0) | 290 | ✓ | ✓ |
@@ -339,7 +339,7 @@ L = 16、B = 4 的一次完整比對（分數 67、17 個運算，含 2 格 DEL 
 
 ```
 BSW.py                   golden model（python3 BSW.py --band 4 --s a.dat --t b.dat）
-gen_pattern.py           產生測資與 golden（--band, --length, --random, --legacy）
+gen_pattern.py           產生測資與 golden（--band, --length, --random, --pairs）
 verilog/BSW.v            RTL：BSW（top）、BSW_PE、BSW_traceback
 verilog/BSW_syn.sdc      Design Compiler 合成 script
 testbench/tb_BSW.v       testbench（BAND、SEQ_L、PAT_DIR、RAND_GAP、VCD、FSDB、SDF）
