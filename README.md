@@ -31,6 +31,32 @@ The architecture follows
 ![](PE_BSW.png)
 ![](banded.png)
 
+## Scope: a single-tile accelerator
+This design aligns **one tile**: a query `S` and a reference `T` of exactly the same length `L` (a compile-time
+parameter, default 256), computing only the band `-B <= j-i <= B-1` of that tile. `L` *is* the tile size and `B` the
+band width, so both can be chosen for the application. Memory and area scale as follows:
+
+* traceback memory = (2L - 1) x 4B bit, i.e. **linear in L and in B** (a full SW tile would need 4·L² bit);
+* PEs = `B`; score width = ⌈log2(8L+1)⌉ + 1 bit.
+
+| `L` (tile size) | score width | B = 4 | B = 16 | full SW tile (4·L²) for comparison |
+|---:|---:|---:|---:|---:|
+| 64 | 11 bit | 2,032 bit | 8,128 bit | 16,384 bit |
+| 128 | 12 bit | 4,080 bit | 16,320 bit | 65,536 bit |
+| 256 | 13 bit | 8,176 bit | 32,704 bit | 262,144 bit |
+| 512 | 14 bit | 16,368 bit | 65,472 bit | 1,048,576 bit |
+| 1024 | 15 bit | 32,752 bit | 131,008 bit | 4,194,304 bit |
+| 2048 | 16 bit | 65,520 bit | 262,080 bit | 16,777,216 bit |
+
+Only `L` = 4 … 256 has been simulated; larger values follow from the same parameterization but are not verified.
+
+In real workloads `S` and `T` are usually similar, so the alignment is concentrated around the main diagonal. That is
+what the band exploits, and it is also why long sequences are meant to be cut into tiles along the diagonal with the
+per-tile results chained together. **This repository only implements the single tile.** Chaining the tiles is *not*
+handled: passing the boundary state (H / E / F) between neighbouring tiles, merging the best scores and concatenating
+the traceback paths have to be done outside this module. Inputs must have exactly `L` bases (gaps between `valid`
+cycles are allowed); shorter sequences have to be padded and different lengths are not supported.
+
 ## Scoring
 match +8, mismatch -5, gap open -7, gap extend -3 (same as the SW repository)
 ```
